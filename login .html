@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Mahadev Fitness Gym</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to right, #1e1e2f, #111);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+      }
+      .login-box {
+        background: #222;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+      .login-box img {
+        height: 80px;
+        margin-bottom: 10px;
+      }
+      .login-box h1 {
+        font-size: 1.8rem;
+        color: #f39c12;
+        margin-bottom: 5px;
+      }
+      .login-box p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #bbb;
+      }
+      .login-box input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 6px;
+        background-color: #333;
+        color: #fff;
+        font-size: 1rem;
+      }
+      .login-box input:focus {
+        outline: 2px solid #f39c12;
+      }
+      .login-box button {
+        background-color: #f39c12;
+        color: #000;
+        font-weight: bold;
+        padding: 12px;
+        width: 100%;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .login-box button:hover {
+        transform: scale(1.03);
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .tagline {
+        color: #f39c12;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <img src="logo.png" alt="Gym Logo" />
+      <h1>MAHADEV FITNESS GYM</h1>
+      <p>Welcome to your fitness journey</p>
+      <p class="tagline">Har Har Mahadev!</p>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <div class="error" id="error"></div>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+      function login() {
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+        const errorBox = document.getElementById("error");
+
+        if (user === "admin" && pass === "1234") {
+          window.location.href = "index.html";
+        } else {
+          errorBox.textContent = "Invalid username or password";
+        }
+      }
+    </script>
+  </body>
+</html>
